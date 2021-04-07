@@ -11,6 +11,7 @@ const models = new Map();
 
 router.param('model', (req, res, next) => {
   try {
+    const modelName = req.params.model;
     if (models.has(modelName)) {
       req.model = models.get(modelName);
       next();
